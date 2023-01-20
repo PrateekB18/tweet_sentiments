@@ -41,13 +41,13 @@ elif model =='SVM':
     svc = SVC()
     svc.fit(train_data, y_train)
     preds = svc.predict(test_data)
-    joblib.dump(rfc, 'Support_Vector_Machine.pkl')
+    joblib.dump(svc, 'Support_Vector_Machine.pkl')
     
 elif model == 'LR':
     lr = LogisticRegression(penalty='l2', max_iter=1000)
     lr.fit(train_data, y_train)
     preds = lr.predict(test_data)
-    joblib.dump(rfc, 'Logistic_Regression.pkl')
+    joblib.dump(lr, 'Logistic_Regression.pkl')
 
 print(accuracy_score(y_test,preds))
 
